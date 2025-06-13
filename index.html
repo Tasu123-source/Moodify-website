@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moodify 🎵</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      padding: 40px;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    button {
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      background-color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    iframe {
+      margin-top: 30px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Moodify 🎵</h1>
+  <p>Select your mood:</p>
+
+  <button onclick="playMusic('happy')">😊 Happy</button>
+  <button onclick="playMusic('sad')">😢 Sad</button>
+  <button onclick="playMusic('chill')">😎 Chill</button>
+  <button onclick="playMusic('energetic')">💪 Energetic</button>
+
+  <div id="musicPlayer"></div>
+
+  <script>
+    function playMusic(mood) {
+      const music = {
+        happy: "https://www.youtube.com/embed/ZbZSe6N_BXs",
+        sad: "https://www.youtube.com/embed/ho9rZjlsyYY",
+        chill: "https://www.youtube.com/embed/5qap5aO4i9A",
+        energetic: "https://www.youtube.com/embed/fLexgOxsZu0"
+      };
+
+      document.getElementById("musicPlayer").innerHTML = `
+        <iframe width="560" height="315" 
+          src="${music[mood]}" 
+          frameborder="0" allowfullscreen></iframe>`;
+    }
+  </script>
+</body>
+</html>
